@@ -82,8 +82,8 @@ public class IDBUtils {
 
     public static JsArrayString toJsArray(List<String> pList) {
         JsArrayString js = JsArrayString.createArray().cast();
-        for (int i = 0; i < pList.size(); i++) {
-            js.set(i, pList.get(i));
+        for (String s : pList) {
+            js.push(s);
         }
         return js;
     }
