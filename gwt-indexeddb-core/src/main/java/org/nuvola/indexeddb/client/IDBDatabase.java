@@ -2,6 +2,7 @@ package org.nuvola.indexeddb.client;
 
 import java.util.List;
 
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.JavaScriptException;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArrayString;
@@ -110,7 +111,7 @@ public class IDBDatabase extends JavaScriptObject {
         ir.onError(new IDBCallback() {
             @Override
             public void onEvent(IDBEvent pEvent) {
-                System.out.println("Error:" + pEvent);
+                GWT.log("Error:" + pEvent);
                 pCallback.onFailure(new IDBException(IDBException.UNKNOWN_ERR, pEvent.toString()));
             }
         });
@@ -141,14 +142,14 @@ public class IDBDatabase extends JavaScriptObject {
         ir.onError(new IDBCallback() {
             @Override
             public void onEvent(IDBEvent pEvent) {
-                System.out.println("Error:" + pEvent);
+                GWT.log("Error:" + pEvent);
                 pCallback.onFailure(new IDBException(IDBException.UNKNOWN_ERR, pEvent.toString()));
             }
         });
         ir.onBlocked(new IDBCallback() {
             @Override
             public void onEvent(IDBEvent pEvent) {
-                System.out.println("Blocked:" + pEvent);
+                GWT.log("Blocked:" + pEvent);
                 pCallback.onFailure(new IDBException(IDBException.UNKNOWN_ERR, pEvent.toString()));
             }
         });
