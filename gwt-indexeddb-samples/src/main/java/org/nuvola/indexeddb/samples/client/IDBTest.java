@@ -14,10 +14,10 @@ public class IDBTest implements EntryPoint {
 
     @Override
     public void onModuleLoad() {
-        openDatabaseConnection("test_db", 5L);
+        openDatabaseConnection("test_db", 5);
     }
 
-    private void openDatabaseConnection(final String databaseName, Long version) {
+    private void openDatabaseConnection(final String databaseName, int version) {
         IDBDatabase.open(databaseName, version, new ConnectionCallback() {
             @Override
             public void onFailure(Throwable throwable) {

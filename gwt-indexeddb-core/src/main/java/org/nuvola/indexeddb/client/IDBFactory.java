@@ -19,7 +19,7 @@ public class IDBFactory extends JavaScriptObject {
         return $wnd.indexedDB.open(pDBName);
     }-*/;
 
-    public final static native IDBOpenDBRequest open(String pDBName, Long version) /*-{
+    public final static native IDBOpenDBRequest open(String pDBName, int version) /*-{
         return $wnd.indexedDB.open(pDBName, version);
     }-*/;
 

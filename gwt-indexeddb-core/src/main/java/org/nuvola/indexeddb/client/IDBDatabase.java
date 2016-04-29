@@ -102,10 +102,10 @@ public class IDBDatabase extends JavaScriptObject {
     }
 
     public static void open(String pName, final ConnectionCallback pCallback) {
-        open(pName, 1L, pCallback);
+        open(pName, 1, pCallback);
     }
 
-    public static void open(String pName, Long version, final ConnectionCallback pCallback) {
+    public static void open(String pName, int version, final ConnectionCallback pCallback) {
         final IDBOpenDBRequest ir = IDBFactory.open(pName, version);
         ir.onError(new IDBCallback() {
             @Override
