@@ -17,25 +17,5 @@
             <groupId>com.google.gwt</groupId>
             <artifactId>gwt-user</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.ow2.asm</groupId>
-            <artifactId>asm</artifactId>
-        </dependency>
-
-        <!-- DI dependencies -->
-        <dependency>
-            <groupId>com.google.inject.extensions</groupId>
-            <artifactId>guice-assistedinject</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.google.gwt.inject</groupId>
-            <artifactId>gin</artifactId>
-        </dependency>
-
-        <!-- JSON Jackson dependencies -->
-        <dependency>
-            <groupId>com.github.nmorel.gwtjackson</groupId>
-            <artifactId>gwt-jackson</artifactId>
-        </dependency>
     </dependencies>
 </project>
