@@ -21,6 +21,7 @@ public class IDBRequest extends JavaScriptObject {
             try {
                 pCallback.onEvent(pEvent);
             } catch (Throwable e) {
+                GWT.log("error", e);
                 ueh.onUncaughtException(e);
             }
         } else {
