@@ -4,12 +4,10 @@ import org.nuvola.indexeddb.client.ConnectionCallback;
 import org.nuvola.indexeddb.client.IDBDatabase;
 import org.nuvola.indexeddb.client.IDBDatabaseOptionalParameters;
 import org.nuvola.indexeddb.client.IDBException;
-import org.nuvola.indexeddb.client.IDBObjectStore;
 import org.nuvola.indexeddb.client.IDBTransaction;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.user.client.Window;
-import com.google.gwt.user.client.rpc.AsyncCallback;
 
 public class IDBTest implements EntryPoint {
     private IDBDatabase database;
