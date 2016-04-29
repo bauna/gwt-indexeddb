@@ -1,30 +1,14 @@
 package org.nuvola.indexeddb.client;
 
-import com.google.gwt.core.client.JavaScriptObject;
+import jsinterop.annotations.JsType;
 
-public class IDBDatabaseOptionalParameters extends JavaScriptObject {
-    protected IDBDatabaseOptionalParameters() {
-    }
+@JsType
+public class IDBDatabaseOptionalParameters {
+    public boolean autoIncrement;
+    public String keyPath;
 
-    public final native void setAutoIncrement(boolean pValue) /*-{
-        this.autoIncrement = pValue;
-    }-*/;
-
-    public final native void setKeyPath(String pKeyPath) /*-{
-        this.keyPath = pKeyPath;
-    }-*/;
-
-    public static IDBDatabaseOptionalParameters create() {
-        IDBDatabaseOptionalParameters res = JavaScriptObject.createObject().cast();
-        res.setKeyPath(null);
-        res.setAutoIncrement(true);
-        return res;
-    }
-
-    public static IDBDatabaseOptionalParameters create(String pKeyPath, boolean pAutoIncrement) {
-        IDBDatabaseOptionalParameters res = JavaScriptObject.createObject().cast();
-        res.setKeyPath(pKeyPath);
-        res.setAutoIncrement(pAutoIncrement);
-        return res;
+    public IDBDatabaseOptionalParameters(String keyPath, boolean autoIncrement) {
+        this.keyPath = keyPath;
+        this.autoIncrement = autoIncrement;
     }
 }

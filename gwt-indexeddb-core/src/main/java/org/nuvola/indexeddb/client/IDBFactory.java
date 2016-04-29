@@ -1,41 +1,13 @@
 package org.nuvola.indexeddb.client;
 
-import com.google.gwt.core.client.JavaScriptException;
-import com.google.gwt.core.client.JavaScriptObject;
+import jsinterop.annotations.JsPackage;
+import jsinterop.annotations.JsType;
 
-public class IDBFactory extends JavaScriptObject {
-    protected IDBFactory() {
-    }
-
-    private static native void init() /*-{
-        $wnd.indexedDB = $wnd.indexedDB || $wnd.mozIndexedDB || $wnd.webkitIndexedDB;
-    }-*/;
-
-    static {
-        init();
-    }
-
-    public final static native IDBOpenDBRequest open(String pDBName) /*-{
-        return $wnd.indexedDB.open(pDBName);
-    }-*/;
-
-    public final static native IDBOpenDBRequest open(String pDBName, int version) /*-{
-        return $wnd.indexedDB.open(pDBName, version);
-    }-*/;
-
-    public final static native IDBOpenDBRequest deleteDatabase(String pDBName) /*-{
-        return $wnd.indexedDB.deleteDatabase(pDBName);
-    }-*/;
-
-    private static native int cmp0(JavaScriptObject pKey1, JavaScriptObject pKey2) throws JavaScriptException /*-{
-        return $wnd.indexedDB.cmp(pKey1, pKey2);
-    }-*/;
-
-    public final static int cmp(JavaScriptObject pKey1, JavaScriptObject pKey2) throws IDBException {
-        try {
-            return cmp0(pKey1, pKey2);
-        } catch (JavaScriptException jex) {
-            throw new IDBException(jex);
-        }
-    }
+@JsType(isNative = true, namespace = JsPackage.GLOBAL)
+public abstract class IDBFactory {
+    protected IDBFactory() {}
+    public native IDBOpenDBRequest open(String name, int version);
+    public native IDBOpenDBRequest open(String name);
+    public native IDBOpenDBRequest deleteDatabase(String name);
+    public native short cmp(Object first, Object second);
 }

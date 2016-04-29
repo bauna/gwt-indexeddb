@@ -4,6 +4,6 @@ import jsinterop.annotations.JsFunction;
 
 @JsFunction
 @FunctionalInterface
-public interface IDBCallback {
-    public void onEvent(IDBEvent pEvent);
+public interface EventHandler<T extends Event> {
+    void execute(T event);
 }
