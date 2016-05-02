@@ -1,7 +1,6 @@
 package org.nuvola.indexeddb.client;
 
 import com.google.gwt.core.client.JavaScriptException;
-import com.google.gwt.core.client.JavaScriptObject;
 
 @SuppressWarnings("serial")
 public class IDBException extends Exception {
@@ -22,13 +21,13 @@ public class IDBException extends Exception {
 
     public IDBException(JavaScriptException pException) {
         super(pException.getDescription(), pException);
-        JavaScriptObject jso = pException.getException();
-        if (jso == null) {
+        if (!pException.isThrownSet()) {
             m_code = UNKNOWN_ERR;
         } else {
             try {
-                m_code = getErrorCode(jso);
+                m_code = getErrorCode(pException.getThrown());
             } catch (Throwable th) {
+                m_code = UNKNOWN_ERR;
             }
         }
     }
@@ -36,7 +35,7 @@ public class IDBException extends Exception {
     private IDBException() {
     }
 
-    private native int getErrorCode(JavaScriptObject pJSO) /*-{
+    private native int getErrorCode(Object pJSO) /*-{
         return pJSO.code;
     }-*/;
 

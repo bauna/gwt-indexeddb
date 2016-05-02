@@ -4,6 +4,7 @@ import org.nuvola.indexeddb.client.IDBDatabase;
 
 import com.google.gwt.core.client.EntryPoint;
 
+@SuppressWarnings("unused")
 public class IDBTest implements EntryPoint {
     private IDBDatabase database;
 
