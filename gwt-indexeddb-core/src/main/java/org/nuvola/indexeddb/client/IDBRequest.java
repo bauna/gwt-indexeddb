@@ -5,7 +5,6 @@ import jsinterop.annotations.JsType;
 
 @JsType(isNative = true, namespace = JsPackage.GLOBAL)
 public abstract class IDBRequest extends EventTarget  {
-    public Object result;
     public Object error;
     public IDBTransaction transaction;
     public String readyState;

@@ -11,15 +11,4 @@ public class IDBIndexOptions {
     public IDBIndexOptions(boolean unique) {
         this.unique = unique;
     }
-
-    public IDBIndexOptions(boolean unique, String multiEntry) {
-        this.unique = unique;
-        this.multiEntry = multiEntry;
-    }
-
-    public IDBIndexOptions(boolean unique, String multiEntry, String locale) {
-        this.unique = unique;
-        this.multiEntry = multiEntry;
-        this.locale = locale;
-    }
 }

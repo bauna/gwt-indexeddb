@@ -13,6 +13,10 @@ public class JsInteropHelper {
         return num;
     }-*/;
 
+    public static native Object castInt(int num) /*-{
+        return num;
+    }-*/;
+
     public static native double castDouble(Object num) /*-{
         return num;
     }-*/;
