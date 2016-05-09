@@ -9,6 +9,7 @@ public abstract class IDBCursor {
     public String direction;
     public Object key;
     public Object primaryKey;
+    public Object value;
     protected IDBCursor() {}
     public native void advance(int count);
 

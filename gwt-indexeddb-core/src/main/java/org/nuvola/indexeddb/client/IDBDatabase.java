@@ -8,10 +8,10 @@ public abstract class IDBDatabase extends EventTarget  {
     public String name;
     public Object version;
     public Object objectStoreNames;
-    public Object onabort;
-    public Object onclose;
-    public Object onerror;
-    public Object onversionchange;
+    public EventHandler<Event> onabort;
+    public EventHandler<Event> onclose;
+    public EventHandler<Event> onerror;
+    public EventHandler<Event> onversionchange;
     protected IDBDatabase() {}
     public native IDBTransaction transaction(String[] storeNames, String mode);
     public native IDBTransaction transaction(String[] storeNames);

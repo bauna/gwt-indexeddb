@@ -21,8 +21,8 @@ public abstract class IDBIndex {
     public native IDBRequest getAllKeys();
     public native IDBRequest count(Object query);
     public native IDBRequest count();
-    public native IDBRequest openCursor(Object query, String direction);
-    public native IDBRequest openCursor(Object query);
+    public native IDBRequest openCursor(IDBKeyRange query, String direction);
+    public native IDBRequest openCursor(IDBKeyRange query);
     public native IDBRequest openCursor();
     public native IDBRequest openKeyCursor(Object query, String direction);
     public native IDBRequest openKeyCursor(Object query);
