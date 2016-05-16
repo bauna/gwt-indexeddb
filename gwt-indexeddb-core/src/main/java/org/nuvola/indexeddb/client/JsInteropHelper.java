@@ -1,5 +1,7 @@
 package org.nuvola.indexeddb.client;
 
+import java.util.Date;
+
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.json.client.JSONArray;
 import com.google.gwt.json.client.JSONObject;
@@ -53,11 +55,22 @@ public class JsInteropHelper {
         return o[propertyName] || 0;
     }-*/;
 
+    public static native double getNum(Object o, String propertyName, double def) /*-{
+        return o[propertyName] || def;
+    }-*/;
+
     public static native String getISODate(Object o, String propertyName) /*-{
         var date = o[propertyName] || 0;
-
         return new Date(date).toISOString();
     }-*/;
+
+    public static native boolean getBool(Object o, String propertyName) /*-{
+        return !!o[propertyName];
+    }-*/;
+
+    public static Date getDate(Object o, String propertyName) {
+        return new Date((long) getNum(o, propertyName));
+    }
 
     public static native <T extends JavaScriptObject> T keys(JavaScriptObject object) /*-{
         var data = [];
