@@ -8,7 +8,7 @@ public abstract class IDBTransaction extends EventTarget  {
     public Object objectStoreNames;
     public String mode;
     public IDBDatabase db;
-    public EventHandler<Event> error;
+    public Object error;
     public EventHandler<Event> onabort;
     public EventHandler<Event> oncomplete;
     public EventHandler<Event> onerror;
