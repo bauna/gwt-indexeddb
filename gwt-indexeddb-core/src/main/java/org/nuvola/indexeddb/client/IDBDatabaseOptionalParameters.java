@@ -2,11 +2,15 @@ package org.nuvola.indexeddb.client;
 
 import jsinterop.annotations.JsConstructor;
 import jsinterop.annotations.JsIgnore;
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 @JsType
 public class IDBDatabaseOptionalParameters {
+    @JsProperty
     public boolean autoIncrement;
+
+    @JsProperty
     public String keyPath;
 
     @JsConstructor
