@@ -152,7 +152,7 @@
                         <includes>**/*GwtTest.java</includes>
                         <mode>htmlunit</mode>
                         <gen>gen</gen>
-
+                        <generateJsInteropExports>true</generateJsInteropExports>
                         <extraJvmArgs>-Xss1024k -Xmx512M</extraJvmArgs>
                         <logLevel>INFO</logLevel>
 
