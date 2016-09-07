@@ -68,9 +68,15 @@ public class JsInteropHelper {
         return !!o[propertyName];
     }-*/;
 
+    public static native boolean isArray(Object o) /*-{
+        return Array.isArray(o);
+    }-*/;
+
     public static Date getDate(Object o, String propertyName) {
         return new Date((long) getNum(o, propertyName));
     }
+
+
 
     public static native <T extends JavaScriptObject> T keys(JavaScriptObject object) /*-{
         var data = [];
