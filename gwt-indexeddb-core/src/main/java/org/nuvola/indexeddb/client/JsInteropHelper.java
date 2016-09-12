@@ -48,7 +48,7 @@ public class JsInteropHelper {
     }-*/;
 
     public static native String getString(Object o, String propertyName) /*-{
-        return "" + o[propertyName];
+        return !!o[propertyName] ? "" + o[propertyName] : null;
     }-*/;
 
     public static native double getNum(Object o, String propertyName) /*-{
