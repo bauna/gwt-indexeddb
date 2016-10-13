@@ -10,5 +10,6 @@ public abstract class IDBRequest extends EventTarget  {
     public String readyState;
     public EventHandler<Event> onsuccess;
     public EventHandler<Event> onerror;
+    public EventHandler<Event> onabort;
     protected IDBRequest() {}
 }

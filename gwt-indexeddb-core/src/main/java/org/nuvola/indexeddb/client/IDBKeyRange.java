@@ -12,11 +12,11 @@ public abstract class IDBKeyRange {
     protected IDBKeyRange() {}
     public static native IDBKeyRange only(Object value);
     public static native IDBKeyRange lowerBound(Object lower, boolean open);
-    public native IDBKeyRange lowerBound(Object lower);
+    public static native IDBKeyRange lowerBound(Object lower);
     public static native IDBKeyRange upperBound(Object upper, boolean open);
-    public native IDBKeyRange upperBound(Object upper);
+    public static native IDBKeyRange upperBound(Object upper);
     public static native IDBKeyRange bound(Object lower, Object upper, boolean lowerOpen, boolean upperOpen);
-    public native IDBKeyRange bound(Object lower, Object upper, boolean lowerOpen);
-    public native IDBKeyRange bound(Object lower, Object upper);
-    public native boolean includes(Object key);
+    public static native IDBKeyRange bound(Object lower, Object upper, boolean lowerOpen);
+    public static native IDBKeyRange bound(Object lower, Object upper);
+    public static native boolean includes(Object key);
 }

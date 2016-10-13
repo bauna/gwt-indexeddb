@@ -21,7 +21,7 @@ public abstract class IDBObjectStore {
     public native IDBRequest getKey(Object query);
     public native IDBRequest getAll(Object query, int count);
     public native IDBRequest getAll(Object query);
-    public native IDBRequest getAll();
+//    public native IDBRequest getAll();
     public native IDBRequest getAllKeys(Object query, int count);
     public native IDBRequest getAllKeys(Object query);
     public native IDBRequest getAllKeys();
